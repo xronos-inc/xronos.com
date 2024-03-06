@@ -242,21 +242,34 @@ header {
         .portfolio-box-caption-content {
             width: 100%;
             text-align: center;
-            position: absolute;
-            top: 100px;
-            transform: translateY(-50%);
+            // position: absolute;
+            // top: 100px;
+            // transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            align-items: center;
             .project-category,
             .project-name {
                 @include sans-serif-font;
-                padding: 0 15px;
+                padding: 1rem 15px;
+            }
+            .project-topspace {
+                flex-grow: 18;
             }
             .project-category {
                 text-transform: uppercase;
                 font-weight: 600;
                 font-size: 14px;
+                flex-grow: 1;
             }
             .project-name {
                 font-size: 18px;
+                flex-grow: 1;
+            }
+            .project-bio {
+                font-size: 14px;
+                flex-grow: 4;
             }
         }
     }
