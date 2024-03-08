@@ -226,8 +226,11 @@ header {
 .portfolio-box {
     position: relative;
     display: block;
-    max-width: 650px;
+    max-width: 487.5px;
+    max-height: 487.5px;
     margin: 0 auto;
+    aspect-ratio: 1;
+    overflow: hidden;
     .portfolio-box-caption {
         color: white;
         opacity: 0;
@@ -252,7 +255,7 @@ header {
             .project-category,
             .project-name {
                 @include sans-serif-font;
-                padding: 1rem 15px;
+                padding: 1rem 1rem;
             }
             .project-topspace {
                 flex-grow: 18;
@@ -267,8 +270,8 @@ header {
                 font-size: 18px;
                 flex-grow: 1;
             }
-            .project-bio {
-                font-size: 14px;
+            .project-bio p {
+                font-size: 10px;
                 flex-grow: 4;
             }
         }
@@ -285,7 +288,14 @@ header {
                     font-size: 16px;
                 }
                 .project-name {
-                    font-size: 22px;
+                    font-size: 20px;
+                }
+
+                @media (min-width: 1400px) {
+                    .project-bio p {
+                        font-size: 12px;
+                        flex-grow: 4;
+                    }
                 }
             }
         }
