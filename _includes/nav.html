@@ -8,9 +8,26 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top"><img src="img/logo-small-on-dark-no-padding.svg"/></a>
+            <a class="navbar-brand page-scroll" href="#page-top"><img id="navbar-logo" img src="img/logo-small-on-dark-no-padding.svg"/></a>
         </div>
 
+        <!-- Added by Erling: Quick hack to use the correct logo SVG on mobile where the navbar is white. -->
+        <script>
+            window.addEventListener('DOMContentLoaded', function() {
+                var logoImg = document.getElementById('navbar-logo');
+                
+                function setLogoSrc() {
+                    if (window.innerWidth <= 768) {
+                        logoImg.src = 'img/logo-small-on-light-no-padding.svg'; // Path to your mobile logo SVG
+                    } else {
+                        logoImg.src = 'img/logo-small-on-dark-no-padding.svg'; // Default logo SVG
+                    }
+                }
+
+                setLogoSrc();
+                window.addEventListener('resize', setLogoSrc);
+            });
+        </script>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
